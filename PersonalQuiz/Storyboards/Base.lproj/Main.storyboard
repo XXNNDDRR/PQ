@@ -335,8 +335,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="youLabel" destination="bx0-ua-oZR" id="ax0-Cg-856"/>
-                        <outlet property="yourDescriptionLabel" destination="SEz-3E-gQr" id="aQ0-WJ-mDV"/>
+                        <outlet property="yourAnimalDescriptionLabel" destination="SEz-3E-gQr" id="aQ0-WJ-mDV"/>
+                        <outlet property="yourAnimalLabel" destination="bx0-ua-oZR" id="ax0-Cg-856"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFO-CL-2q4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

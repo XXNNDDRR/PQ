@@ -68,10 +68,6 @@ final class QuestionsViewController: UIViewController {
         answersChosen.append(currentAnswers[index])
         nextQuestion()
     }
-    
-    deinit {
-        print("\(type(of: self)) has been deallocated")
-    }
 }
 
 // MARK: - Private Methods

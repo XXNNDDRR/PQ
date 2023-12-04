@@ -9,40 +9,31 @@ import UIKit
 
 final class ResultViewController: UIViewController {
 
-    // MARK: - IBOutlets
-    @IBOutlet var youLabel: UILabel!
-    @IBOutlet var yourDescriptionLabel: UILabel!
+    @IBOutlet var yourAnimalLabel: UILabel!
+    @IBOutlet var yourAnimalDescriptionLabel: UILabel!
     
-    // MARK: - Public properties
     var answersChosen: [Answer]!
     
-    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let chosenAnimal = numberOfResponses(answersChosen)
-        youLabel.text = "Вы - \(chosenAnimal.rawValue)"
-        yourDescriptionLabel.text = chosenAnimal.definition
+        yourAnimalLabel.text = "Вы - \(chosenAnimal.rawValue)"
+        yourAnimalDescriptionLabel.text = chosenAnimal.definition
         
         navigationItem.setHidesBackButton(true, animated: true)
     }
     
-    // MARK: - IB Action
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
-    
-    deinit {
-        print("\(type(of: self)) has been deallocated")
-    }
 }
 
-// MARK: - Finding the maximum number of repetitions
 private extension ResultViewController {
         func numberOfResponses(_ answers: [Answer]) -> Animal {
             var numberOfResponses: [Animal: Int] = [:]
             var max = 1
-            var resultAnimal: Animal = .dog
+            var yourResultAnimal: Animal = .dog
     
             for answer in answers {
                 let animal = answer.animal
@@ -56,9 +47,9 @@ private extension ResultViewController {
                 
                 if numberOfResponses[animal]! > max {
                     max = numberOfResponses[animal]!
-                    resultAnimal = animal
+                    yourResultAnimal = animal
                 }
             }
-            return resultAnimal
+            return yourResultAnimal
         }
 }
