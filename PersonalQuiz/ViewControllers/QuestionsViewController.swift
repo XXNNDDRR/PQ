@@ -42,7 +42,8 @@ final class QuestionsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        guard let resultVC = segue.destination as? ResultViewController else {return}
+        resultVC.answersChosen = answersChosen
     }
 
     // MARK: - IB Actions
@@ -66,6 +67,10 @@ final class QuestionsViewController: UIViewController {
         let index = lrintf(rangedSlider.value)
         answersChosen.append(currentAnswers[index])
         nextQuestion()
+    }
+    
+    deinit {
+        print("\(type(of: self)) has been deallocated")
     }
 }
 
