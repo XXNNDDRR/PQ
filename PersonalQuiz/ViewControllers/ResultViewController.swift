@@ -33,7 +33,7 @@ private extension ResultViewController {
         func numberOfResponses(_ answers: [Answer]) -> Animal {
             var numberOfResponses: [Animal: Int] = [:]
             var max = 1
-            var yourResultAnimal: Animal = .dog
+            var yourResultAnimal: Animal? = nil
     
             for answer in answers {
                 let animal = answer.animal
@@ -50,6 +50,6 @@ private extension ResultViewController {
                     yourResultAnimal = animal
                 }
             }
-            return yourResultAnimal
+            return yourResultAnimal!
         }
 }
